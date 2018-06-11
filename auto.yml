@@ -63,7 +63,7 @@
       template:
         src: ./templates/app.service
         dest: /etc/systemd/system/python_app.service
-    - name: "Start app service"
+    - name: "Start app service and restart"
       systemd:
         name: python_app
         daemon-reload: yes
