@@ -1,0 +1,13 @@
+[Unit] 
+Description=Example Python web application based on Flask framework 
+After=network.target 
+
+[Service] 
+Type=simple
+User=python_app 
+WorkingDirectory={{ app_dir }} 
+ExecStart=/bin/bash -c "FLASK_APP={{ app_dir }}/app.py flask run --host=0.0.0.0" 
+Restart=always 
+
+[Install] 
+WantedBy=network.target
